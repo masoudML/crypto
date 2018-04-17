@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="settings" prefHeight="850.0" prefWidth="1400.0" style="-fx-background-color: #1A237E;" stylesheets="@custom.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ark.optimal.wallet.ui.main.FXMLHomeViewController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="446.0" layoutY="87.0" prefHeight="395.0" prefWidth="573.0" style="-fx-background-radius: 10; -fx-background-color: white;">
+         <children>
+            <JFXListView fx:id="homeAccounts" layoutY="50.0" onMouseClicked="#handleUserAccountMouseClick" prefHeight="288.0" prefWidth="573.0" />
+            <HBox layoutX="5.0" layoutY="342.0" prefHeight="47.0" prefWidth="543.0">
+               <children>
+                  <JFXButton fx:id="btnCreateAccount" alignment="BASELINE_LEFT" onAction="#onCreateAccount" prefHeight="42.0" prefWidth="264.0" style="-fx-text-align: center;" text="Create Account" textFill="#757575" textOverrun="CLIP">
+                     <padding>
+                        <Insets left="30.0" right="5.0" />
+                     </padding>
+                     <tooltip>
+                        <Tooltip fx:id="delegateAddressTooltip1" text="Empty Tooltip" />
+                     </tooltip>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resources/myaccount.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="btnImportAccount" alignment="BASELINE_LEFT" onAction="#onImportAccount" prefHeight="42.0" prefWidth="278.0" style="-fx-text-align: left;" text="Import Account" textFill="#757575" textOverrun="CLIP">
+                     <padding>
+                        <Insets left="30.0" right="5.0" />
+                     </padding>
+                     <tooltip>
+                        <Tooltip fx:id="delegateAddressTooltip" text="Empty Tooltip" />
+                     </tooltip>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../resources/import-account.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <Label fx:id="myaccountstitle" prefHeight="52.0" prefWidth="573.0" style="-fx-alignment: LEFT_CENTER; -fx-background-radius: 5;" styleClass="toolbar" stylesheets="@main/custom.css" text="My Accounts" textAlignment="CENTER" textFill="#fffdfd">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton fx:id="goHomeBtn" onAction="#onViewHome" prefHeight="34.0" prefWidth="252.0" text="ARK SMART WALLET - 1.0" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../resources/Ark.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="settingsBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="1102.0" layoutY="11.0" onAction="#onSettings" prefHeight="31.0" prefWidth="66.0">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="GEAR" size="20" />
+         </graphic>
+         <tooltip>
+            <Tooltip contentDisplay="BOTTOM" text="Settings" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+      </JFXButton>
+      <JFXButton fx:id="saveWalletBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="1171.0" layoutY="11.0" onAction="#onSaveWallet" prefHeight="31.0" prefWidth="66.0">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="20" />
+         </graphic>
+         <tooltip>
+            <Tooltip contentDisplay="BOTTOM" text="Save">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+      </JFXButton>
+      <JFXButton fx:id="loadWalletBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="1241.0" layoutY="11.0" onAction="#onLoadWallet" prefHeight="31.0" prefWidth="66.0">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="FOLDER_OPEN" size="20" />
+         </graphic>
+         <tooltip>
+            <Tooltip contentDisplay="BOTTOM" text="Load Wallet">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+      </JFXButton>
+      <JFXButton fx:id="exportWalletBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="1307.0" layoutY="11.0" onAction="#onExportWallet" prefHeight="31.0" prefWidth="66.0">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="ARROW_CIRCLE_UP" size="20" />
+         </graphic>
+         <tooltip>
+            <Tooltip contentDisplay="BOTTOM" text="Export Wallet">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+      </JFXButton>
+      <AnchorPane layoutX="541.0" layoutY="521.0" prefHeight="200.0" prefWidth="386.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <Label layoutX="14.0" layoutY="15.0" prefHeight="31.0" prefWidth="122.0" text="Price">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="priceLabel" alignment="CENTER_RIGHT" layoutX="225.0" layoutY="15.0" prefHeight="31.0" prefWidth="147.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="78.0" prefHeight="31.0" prefWidth="122.0" text="Change 1h/7h/7d">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="change1hLabel" alignment="CENTER" layoutX="208.0" layoutY="85.0" prefHeight="17.0" prefWidth="46.0" />
+            <Label fx:id="change24hLabel" alignment="CENTER" layoutX="263.0" layoutY="85.0" prefHeight="17.0" prefWidth="53.0" />
+            <Label fx:id="change7dLabel" alignment="CENTER" layoutX="320.0" layoutY="85.0" prefHeight="17.0" prefWidth="53.0" />
+            <Label layoutX="14.0" layoutY="140.0" prefHeight="31.0" prefWidth="122.0" text="Market Cap.">
+               <font>
+                  <Font name="Arial Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="marketcapLabel" alignment="CENTER_RIGHT" layoutX="225.0" layoutY="140.0" prefHeight="31.0" prefWidth="147.0">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="252.0" layoutY="85.0" prefHeight="17.0" prefWidth="13.0" text="/" />
+            <Label alignment="CENTER" layoutX="311.0" layoutY="85.0" prefHeight="17.0" prefWidth="13.0" text="/" />
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
